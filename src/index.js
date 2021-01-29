@@ -25,8 +25,7 @@ darkThemeCheck();
 
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme) {
-  const parsedTheme = JSON.parse(savedTheme);
-  body.classList.add(parsedTheme);
+  body.classList.add(savedTheme);
 }
 
 checkBox.addEventListener("change", shiftTheme);
