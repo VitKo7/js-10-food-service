@@ -13,20 +13,35 @@ const Theme = {
 const checkBox = document.querySelector("#theme-switch-toggle");
 const body = document.querySelector("body");
 
-body.classList.add(Theme.LIGHT);
-
-function darkThemeCheck() {
-  if (localStorage.getItem("theme") === Theme.DARK) {
-    checkBox.checked = true;
-    body.classList.replace(Theme.LIGHT, Theme.DARK);
-  }
+// * var-2 ----------- START
+let savedTheme = localStorage.getItem("theme");
+if (!savedTheme) {
+  savedTheme = Theme.LIGHT;
 }
-darkThemeCheck();
-
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) {
-  body.classList.add(savedTheme);
+if (localStorage.getItem("theme") === Theme.DARK) {
+  checkBox.checked = true;
 }
+body.classList.add(savedTheme);
+
+// * var-2 ----------- END
+
+// ! var-1 ----------- START
+
+// body.classList.add(Theme.LIGHT);
+
+// function darkThemeCheck() {
+//   if (localStorage.getItem("theme") === Theme.DARK) {
+//     checkBox.checked = true;
+//     body.classList.replace(Theme.LIGHT, Theme.DARK);
+//   }
+// }
+// darkThemeCheck();
+
+// const savedTheme = localStorage.getItem("theme");
+// if (savedTheme) {
+//   body.classList.add(savedTheme);
+// }
+// ! var-1 ----------- END
 
 checkBox.addEventListener("change", shiftTheme);
 
