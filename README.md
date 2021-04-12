@@ -1,3 +1,3 @@
-# goit-js-hw-10-food-service
+# js-10-food-service
 
 Webpack, plugins, templates - practice
